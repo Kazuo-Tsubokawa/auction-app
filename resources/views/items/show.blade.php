@@ -32,6 +32,7 @@
     <p>
         <img src="{{ $item->image_url }}">
     </p>
+    <a href="/items/{{ $item->id }}/edit">編集する</a>
 </body>
 
 </html>
