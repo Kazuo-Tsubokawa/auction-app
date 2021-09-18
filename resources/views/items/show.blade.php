@@ -35,13 +35,13 @@
         <img src="{{ $item->image_url }}">
     </p>
     {{-- <a href="/items/{{ $item->id }}/edit">編集する</a> --}}
-    <div class = "button-group">
-    <button type="button" onclick="location.href='/items/{{ $item->id }}/edit'">編集する</button>
-    <form action="/items/{{ $item->id }}" method="post" id="delete-form">
-        <input type="submit" value="削除する" onclick="if(!confirm('本当に削除しますか？')){return false};" form="delete-form">
-        @csrf
-        @method('DELETE')
-    </form>
+    <div class="button-group">
+        <button type="button" onclick="location.href='/items/{{ $item->id }}/edit'">編集する</button>
+        <form action="/items/{{ $item->id }}" method="post" id="delete-form">
+            <input type="submit" value="削除する" onclick="if(!confirm('本当に削除しますか？')){return false};" form="delete-form">
+            @csrf
+            @method('DELETE')
+        </form>
     </div>
 </body>
 
