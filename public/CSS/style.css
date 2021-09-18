@@ -3,12 +3,15 @@
 label {
     display: block;
 }
+
 .button-group {
     display: flex;
 }
+
 .button-group button {
     margin-right: 10px;
 }
+
 .error {
     color: red;
 }
