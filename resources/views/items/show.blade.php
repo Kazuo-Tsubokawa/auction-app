@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
 </head>
 
 <body>
@@ -33,12 +35,14 @@
         <img src="{{ $item->image_url }}">
     </p>
     {{-- <a href="/items/{{ $item->id }}/edit">編集する</a> --}}
+    <div class = "button-group">
     <button type="button" onclick="location.href='/items/{{ $item->id }}/edit'">編集する</button>
     <form action="/items/{{ $item->id }}" method="post" id="delete-form">
         <input type="submit" value="削除する" onclick="if(!confirm('本当に削除しますか？')){return false};" form="delete-form">
         @csrf
         @method('DELETE')
     </form>
+    </div>
 </body>
 
 </html>
