@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Item;
 use App\Http\Requests\ItemRequest;
+use Psy\ExecutionLoop\RunkitReloader;
 
 class ItemController extends Controller
 {
@@ -62,6 +63,14 @@ class ItemController extends Controller
         $item->save();
 
         // 登録したらindexに戻る
+        return redirect('/items');
+    }
+
+    public function destroy($id)
+    {
+        $item = Item::find($id);
+        $item->delete();
+
         return redirect('/items');
     }
 }
